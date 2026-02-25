@@ -13,7 +13,7 @@ fetch(endpoint)
         data.forEach(items => {
             console.log(items);
             const { title, date, url } = items
-            const markup = `<div class="col-12 col-md-6 col-lg-4 p-4">
+            const markup = `<div class="col-12 col-md-6 col-lg-4 p-3">
                         <div class="card">
                             <div class="card-header border-0">
                                 <img src="./assets/img/pin.svg" alt="red pin" class="position-absolute top-10 start-50 translate-middle">
