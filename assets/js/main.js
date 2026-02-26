@@ -16,7 +16,7 @@ fetch(endpoint)
             const markup = `<div class="col-12 col-md-6 col-lg-4 p-3">
                         <div class="card">
                             <div class="card-header border-0">
-                                <img src="./assets/img/pin.svg" alt="red pin" class="position-absolute top-10 start-50 translate-middle">
+                                <img src="./assets/img/pin.svg" alt="red pin" id="redpin" class="position-absolute top-10 start-50 translate-middle">
                             </div>
                             <div class="card-body p-2">
                                 <div>
@@ -34,4 +34,25 @@ fetch(endpoint)
             rowEl.insertAdjacentHTML("beforeend", markup);
         });
 
+
+        //overlay js code
+        const overlayEl = document.getElementById('overlay');
+        const overlayImgEl = document.getElementById('overlay-img');
+        const closeButtonEl = document.getElementById('close-btn');
+        const cardsImgEl = document.querySelectorAll('.img-fluid');
+
+        cardsImgEl.forEach(img => {
+            img.addEventListener('click', (e) => {
+                overlayImgEl.src = img.src;
+                overlayEl.classList.remove('d-none');
+            });
+        });
+
+        closeButtonEl.addEventListener('click', (e) => {
+            overlayEl.classList.add('d-none');
+        });
+
     })
+
+
+
